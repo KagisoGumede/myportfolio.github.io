@@ -67,10 +67,22 @@ body {
  
  
 .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+  position: fixed;
+  top: 70px; /* or height of your navbar */
+  left: -100%;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: rgba(10, 30, 35, 0.98);
+  flex-direction: column;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  z-index: 1000; /* make sure it’s on top */
 }
+
+.nav-menu.active {
+  left: 0;
+}
+
  
 .nav-link {
     color: var(--text-light);
